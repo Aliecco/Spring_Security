@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @Service
+@Transactional
 public class RoleServiceImpl implements RoleService {
     private RoleDao roleDao;
 
@@ -38,7 +39,6 @@ public class RoleServiceImpl implements RoleService {
         return roleDao.getSetOfRoles(roleNames);
     }
 
-    @Transactional
     @Override
     public void addRole(Role role) {
         roleDao.add(role);

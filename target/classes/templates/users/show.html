@@ -21,27 +21,5 @@
         <td th:utext="${user.getAge()}">VALUE</td>
     </tr>
 </table>
-
-<!--<form method="POST" action="@{/admin/{id}/edit(id=${user.getId()})}" th:object="${user}">-->
-<!--    <label for="name">Enter name: </label>-->
-<!--    <input type="text" th:field="*{firstName}" id="name"/>-->
-<!--    <br/>-->
-<!--    <label for="lastName">Last name: </label>-->
-<!--    <input type="text" th:field="*{lastName}" id="lastName"/>-->
-<!--    <br/>-->
-<!--    <label for="email">Enter email: </label>-->
-<!--    <input type="text" th:field="*{email}" id="email"/>-->
-<!--    <br/>-->
-<!--    <label for="age">Enter email: </label>-->
-<!--    <input type="text" th:field="*{age}" id="age"/>-->
-<!--    <br/>-->
-<!--    <input type="submit" value="Update!"/>-->
-<!--</form>-->
-
-<!--<button><a th:href="@{/users/edit}" alt='Broken Link'>Edit</a></button>-->
-
-<!--<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">-->
-<!--    <input type="submit" value="Delete"/>-->
-<!--</form>-->
 </body>
 </html>

@@ -54,8 +54,10 @@ public class AdminController {
     }
 
     @PostMapping("/{id}/edit")
-    public String update(@ModelAttribute("user") User user) {
+    public String update(@ModelAttribute("user") User user,
+                         @RequestParam(value = "roles", required = false) String[] roles) {
 
+        user.setRoles(roleService.getSetOfRoles(roles));
         service.updateUser(user);
         return "redirect:/admin";
     }

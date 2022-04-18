@@ -22,12 +22,11 @@
     <label for="password">Password: </label>
     <input type="text" th:field="*{password}" id="password"/>
     <br/>
-        <p th:object="${user}"><select size="3" multiple name="roles[]">
-            <option disabled>Role: </option>
-            <option value="ADMIN">ADMIN</option>
-            <option selected value="USER">USER</option>
-        </select></p>
-        <p><input th:field="*{roles}" id="role" type="submit" value="Отправить"></p>
+    <select size="3" multiple name="roles">
+        <option disabled>Role:</option>
+        <option value="ROLE_ADMIN">ADMIN</option>
+        <option selected value="ROLE_USER">USER</option>
+    </select>
     <input type="submit" value="Update!"/>
 </form>
 

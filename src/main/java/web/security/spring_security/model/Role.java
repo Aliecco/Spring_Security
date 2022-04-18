@@ -3,7 +3,6 @@ package web.security.spring_security.model;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "roles")
@@ -15,15 +14,6 @@ public class Role implements GrantedAuthority {
 
     @Column(name = "role", unique = true, length = 50)
     private String role;
-
-    @Transient
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_role"
-            , joinColumns = @JoinColumn(name = "role_id")
-            , inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private List<User> users;
-
 
     public Role() {
 
@@ -54,11 +44,8 @@ public class Role implements GrantedAuthority {
         this.role = name;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
+    @Override
+    public String toString() {
+        return role.replaceAll("ROLE_", "");
     }
 }

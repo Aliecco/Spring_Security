@@ -12,12 +12,12 @@ import web.security.spring_security.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
-    private final UserService service;
-
-    @Autowired
-    public UserController(UserService service) {
-        this.service = service;
-    }
+//    private final UserService service;
+//
+//    @Autowired
+//    public UserController(UserService service) {
+//        this.service = service;
+//    }
 
     @GetMapping
     public String show(@AuthenticationPrincipal User user, Model model){

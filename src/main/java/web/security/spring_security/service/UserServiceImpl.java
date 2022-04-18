@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService{
 
     private final UserDao userDao;
@@ -39,20 +40,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Transactional
     public void saveUser(User user){
         user.setPassword(getEncoder().encode(user.getPassword()));
         userDao.save(user);
     }
 
     @Override
-    @Transactional
     public void deleteById(Long id){
         userDao.deleteById(id);
     }
 
     @Override
-    @Transactional
     public void updateUser(User user){
         user.setPassword(getEncoder().encode(user.getPassword()));
         userDao.updateUser(user);

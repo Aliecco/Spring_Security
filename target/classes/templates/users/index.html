@@ -6,7 +6,6 @@
 </head>
 <body>
 <h2>Users</h2>
-<div>
 <table th:border="1">
     <tr>
         <th>id_user</th>
@@ -14,6 +13,7 @@
         <th>Last name</th>
         <th>Age</th>
         <th>Email</th>
+        <th>Roles</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -25,6 +25,7 @@
         <td th:text="${user.getLastName()}"></td>
         <td th:text="${user.getAge()}"></td>
         <td th:utext="${user.getEmail()}"></td>
+        <td th:text="${user.getRoles()}"></td>
         <td>
             <button><a th:href="@{/admin/{id}/edit(id = ${user.id})}" alt='Broken Link'>Edit</a></button>
         </td>
@@ -39,6 +40,5 @@
 <br/>
 <hr/>
 <h2><a href="/admin/new">Create new user</a></h2>
-</div>
 </body>
 </html>
